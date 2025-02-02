@@ -1,46 +1,171 @@
-*{
-  font-family: 'Times New Roman', Times, serif;
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: lightgrey;
+  background-color: #f0f2f5;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   height: 100vh;
+  margin: 0;
+  padding: 20px;
 }
 
-input, button {
-  font-size: 20px;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 5px;
-  border: none;
-}
-#result {
-  font-size: 18px;
-  margin-top: 20px;
-  padding: 0px 15px;
+.container {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
   text-align: center;
+}
+
+h1 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+label {
+  color: #333;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+input {
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 100%;
+  flex: 1;
+}
+
+input:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 0 2px rgba(0, 86, 179, 0.2);
+}
+
+button {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #004494;
+}
+
+#result {
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #fff;
+}
+
+#result.invalid {
+  background-color: #dc3545;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.modal h2 {
+  color: #28a745;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.modal p {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal button {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal button:hover {
+  background-color: #004494;
 }
 
 @media (max-width: 600px) {
   body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  .input-group {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
-  #email {
-    width: 100%;
+
+  label {
+    margin-bottom: 0.5rem;
   }
-}
-
-div {
-  display: flex;
-  flex-direction: column;
-}
-
-h1{
-  font-weight: normal;
-  margin-bottom: 0px;
-  font-size: 2.5rem;
 }
